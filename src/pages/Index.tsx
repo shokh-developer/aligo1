@@ -62,7 +62,7 @@ const STORAGE_KEYS = {
   auth: "alifgo_auth",
 };
 
-const SHARED_TRANSLATION_API_KEY = "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";
+const SHARED_TRANSLATION_API_KEY = "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";
 
 const FORMATS: { value: DownloadFormat; label: string }[] = [
   { value: "txt", label: ".txt" },
