@@ -322,6 +322,10 @@ const Index = () => {
   );
 
   const handleTranslate = useCallback(async () => {
+    if (!OPENROUTER_API_KEY) {
+      toast.error("OpenRouter API key topilmadi. .env yoki Netlify env ga VITE_OPENROUTER_API_KEY qo'shing.");
+      return;
+    }
     if (!translateInput.trim()) {
       toast.error("Tarjima uchun matn kiriting.");
       return;
@@ -334,7 +338,7 @@ const Index = () => {
     setIsTranslating(true);
     try {
       const translated = await translateWithApi({
-        apiKey: SHARED_TRANSLATION_API_KEY,
+        apiKey: OPENROUTER_API_KEY,
         inputText: translateInput,
         sourceLanguage,
         targetLanguage,
@@ -730,3 +734,8 @@ const Index = () => {
 };
 
 export default Index;
+
+
+
+
+
